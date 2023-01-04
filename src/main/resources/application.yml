@@ -1,0 +1,41 @@
+#spring:
+#  profiles:
+#    active: local
+#---
+#spring:
+#  profiles: local
+#  kafka:
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.JsonSerializer
+---
+spring:
+  data:
+    cassandra:
+      keyspace-name: main
+      username: kFeFHmzNcQOdrUufzLoAnApw
+      password: GpDu94EFXlqxXfo7HnTIR587G0kdOPWEHIIB6gOx.l4psYcvynLTA-rqlqmLUKmJxC5-YZB2mk35vyqm0OUC.tBQhTugMEbwYfEc0UBq+4ZhRYI0UIunTczfX3UNQ99d
+      schema-action: create-if-not-exists
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+
+datastax.astra:
+  secure-connect-bundle: secure-connect-poc.zip
+
+astra.db:
+  id: 812840d4-c036-4fe1-9bfa-1103ae21a768
+  region: asia-south1
+  keyspace: main
+  application.token: AstraCS:kFeFHmzNcQOdrUufzLoAnApw:7b9040f13fa46c8da5565f21bd89123dd5b4109b4a06d8d4bb70398f70ccf11c
+server:
+  port: 8086
+
+
